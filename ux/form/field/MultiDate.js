@@ -187,7 +187,7 @@ Ext.define('Ext.ux.form.field.MultiDate', {
             errors = [],
             matches, range, isValid, dt;
         
-        if ( Ext.isDefined(values) && (values === null || values.length < 1 )) {
+        if ( !Ext.isDefined(values) || values === null || values.length < 1 ) {
             if ( !me.allowBlank ) {
                 errors.push(me.blankText);
             };
